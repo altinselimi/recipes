@@ -1,0 +1,17 @@
+:root {
+	// colors
+	--grey: #495159;
+	--lemon: #f5f3bb;
+	--red-orange: #d34e24;
+
+	// widths
+	--dashboard-width: 850px;
+	--recipe-width: 850px;
+	--search-popup-width: 850px;
+	--dashboard-padding: 20px;
+	--dashboard-grid-column-gap: 10px;
+	--meal-item-width: calc(
+		(100vw / 3) - (2 * var(--dashboard-padding)) -
+			var(--dashboard-grid-column-gap)
+	);
+}
