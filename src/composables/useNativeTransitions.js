@@ -12,6 +12,7 @@ export function useNativeTransitions() {
   };
 
   const runViewTransition = (elementsAndTransitionNames) => {
+    if (!document.startViewTransition) return Promise.resolve();
     return new Promise((resolve, reject) => {
       const endViewTransition = runViewTransitionTempEffects(
         elementsAndTransitionNames,
