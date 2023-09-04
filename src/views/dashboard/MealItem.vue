@@ -1,8 +1,8 @@
 <script setup>
 import { ref, onMounted } from "vue";
-import { useNativeTransitions } from "../views/useNativeTransitions.js";
+import { useNativeTransitions } from "@/composables/useNativeTransitions.js";
 import { useRouter, useRoute } from "vue-router";
-import { useMealsStore } from "../store/meals.store.js";
+import { useMealsStore } from "@/store/meals.store.js";
 import { Loader as LoadingIcon } from "lucide-vue-next";
 
 const props = defineProps(["data"]);
@@ -31,7 +31,7 @@ const goToMealDetails = async () => {
 		},
 	]).then(() => {
 		router.push({
-			name: "RecipeRoute",
+			name: "MealRoute",
 			params: {
 				id: props.data.idMeal,
 			},

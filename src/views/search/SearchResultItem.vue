@@ -1,9 +1,9 @@
 <script setup>
-import MealIcon from "./MealIcon.vue";
+import MealIcon from "@/components/MealIcon.vue";
 import { MapPin as MapPinIcon } from "lucide-vue-next";
-import { useNativeTransitions } from "../views/useNativeTransitions.js";
+import { useNativeTransitions } from "@/composables/useNativeTransitions.js";
 import { useRouter } from "vue-router";
-import { useMealsStore } from "../store/meals.store.js";
+import { useMealsStore } from "@/store/meals.store.js";
 import { ref } from "vue";
 
 const props = defineProps(["data"]);
@@ -28,7 +28,7 @@ const goToMealDetails = () => {
 	]).then(() => {
 		emit("select");
 		router.push({
-			name: "RecipeRoute",
+			name: "MealRoute",
 			params: {
 				id: props.data.idMeal,
 			},

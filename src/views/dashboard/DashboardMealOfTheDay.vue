@@ -1,10 +1,10 @@
 <script setup>
 import { useRouter } from "vue-router";
 import { computed, ref } from "vue";
-import MealIcon from "../components/MealIcon.vue";
-import { useMealsStore } from "../store/meals.store.js";
+import MealIcon from "@/components/MealIcon.vue";
+import { useMealsStore } from "@/store/meals.store.js";
 import { MapPin as MapPinIcon } from "lucide-vue-next";
-import { useNativeTransitions } from "./useNativeTransitions.js";
+import { useNativeTransitions } from "@/composables/useNativeTransitions.js";
 
 const mealsStore = useMealsStore();
 const mealOfTheDay = computed(() => mealsStore.mealOfTheDay);
@@ -34,7 +34,7 @@ const goToMealDetails = () => {
 		},
 	]).then(() => {
 		router.push({
-			name: "RecipeRoute",
+			name: "MealRoute",
 			params: {
 				id: mealOfTheDay.value.idMeal,
 			},
@@ -116,6 +116,7 @@ const goToMealDetails = () => {
 		position: relative;
 		width: 100%;
 		overflow: hidden;
+		container-type: inline-size;
 	}
 	&__title {
 		margin-bottom: 10px;
@@ -130,11 +131,23 @@ const goToMealDetails = () => {
 		border-radius: 20px;
 		overflow: hidden;
 		cursor: pointer;
+		@container (max-width: 600px) {
+			flex-direction: column;
+			.meal__description {
+				height: 400px;
+				width: 100%;
+				position: static;
+			}
+		}
 	}
 	&__image {
 		height: 400px;
 		object-fit: cover;
 		width: 50%;
+		@container (max-width: 600px) {
+			width: 100%;
+			z-index: 2;
+		}
 	}
 	&__description {
 		position: absolute;

@@ -2,8 +2,8 @@
 import { computed } from "vue";
 import MealCategory from "./DashboardMealCategory.vue";
 import MealOfTheDay from "./DashboardMealOfTheDay.vue";
-import DashboardSkeleton from "../skeletons/DashboardSkeleton.vue";
-import { useMealsStore } from "../store/meals.store.js";
+import DashboardSkeleton from "@/skeletons/DashboardSkeleton.vue";
+import { useMealsStore } from "@/store/meals.store.js";
 
 const mealsStore = useMealsStore();
 

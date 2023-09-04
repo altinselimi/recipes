@@ -1,5 +1,5 @@
-import Dashboard from "./Dashboard.vue";
-import Recipe from "./Recipe.vue";
+import Dashboard from "./dashboard/Dashboard.vue";
+import Meal from "./meal/Meal.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
@@ -9,10 +9,14 @@ const routes = [
 		component: Dashboard,
 	},
 	{
-		name: "RecipeRoute",
-		component: Recipe,
+		name: "MealRoute",
+		component: Meal,
 		path: "/meal/:id",
 		props: true,
+	},
+	{
+		path: "/",
+		redirect: "/home",
 	},
 ];
 

@@ -1,8 +1,8 @@
 <script setup>
 import { computed } from "vue";
 import { useMealsStore } from "./store/meals.store.js";
-import Search from "./components/Search.vue";
-import Bookmarks from "./components/Bookmarks.vue";
+import Search from "./views/search/Search.vue";
+import Bookmarks from "./views/bookmarks/Bookmarks.vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
@@ -24,6 +24,10 @@ mealsStore.fetchRandomMeal();
   <router-view :key="route.fullPath"></router-view>
 </template>
 <style lang="scss">
+body.prevent-overflow #app {
+  overflow: hidden;
+  pointer-events: none;
+}
 .app-header {
   &__wrapper {
     position: sticky;
@@ -31,9 +35,6 @@ mealsStore.fetchRandomMeal();
     z-index: 2;
     background-color: rgba(whitesmoke, 0.85);
     backdrop-filter: blur(40px);
-    &.prevent-overflow {
-      overflow: hidden;
-    }
   }
   &__content {
     display: flex;

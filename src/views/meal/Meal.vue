@@ -1,15 +1,15 @@
 <script setup>
 import { computed, ref, onMounted, watchEffect } from "vue";
-import { useMealsStore } from "../store/meals.store.js";
+import { useMealsStore } from "@/store/meals.store.js";
 import {
 	ChevronLeft as BackIcon,
 	MapPin as MapPinIcon,
 	Bookmark as BookmarkIcon,
 	BookmarkMinus as RemoveBookmarkIcon,
 } from "lucide-vue-next";
-import MealIcon from "../components/MealIcon.vue";
+import MealIcon from "@/components/MealIcon.vue";
 import { useRouter } from "vue-router";
-import RecipeSkeleton from "../skeletons/RecipeView.vue";
+import RecipeSkeleton from "@/skeletons/RecipeView.vue";
 
 const props = defineProps(["id"]);
 

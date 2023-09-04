@@ -1,6 +1,7 @@
 import { defineStore } from "pinia";
 
 export const useMealsStore = defineStore("mealsStore", {
+	persist: true,
 	state: () => ({
 		mealOfTheDay: null,
 		meals: null,

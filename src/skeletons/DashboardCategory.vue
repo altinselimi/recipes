@@ -20,6 +20,12 @@
 	&__list li {
 		width: calc((100cqw / 3) - 10px);
 		height: 250px;
+		@container (max-width: 700px) {
+			width: calc((100cqw / 2) - 10px);
+		}
+		@container (max-width: 450px) {
+			width: calc(100cqw - 10px);
+		}
 	}
 }
 </style>

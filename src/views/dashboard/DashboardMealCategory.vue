@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from "vue";
-import MealItem from "../components/MealItem.vue";
-import { useMealsStore } from "../store/meals.store.js";
+import MealItem from "./MealItem.vue";
+import { useMealsStore } from "@/store/meals.store.js";
 import { useRouter } from "vue-router";
 
 const props = defineProps(["data"]);
