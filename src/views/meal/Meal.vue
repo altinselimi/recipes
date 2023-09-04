@@ -226,6 +226,12 @@ watchEffect(() => {
 			border-radius: 20px;
 			view-transition-name: meal-photo;
 		}
+		@container (max-width: 450px) {
+			float: none;
+			img {
+				width: 100%;
+			}
+		}
 	}
 	&__youtube-iframe {
 		width: 100cqw;
